@@ -12,8 +12,19 @@ public class Student {
     private String name;
 
     private int mobile;
+    @OneToOne
+    @JoinColumn(name = "address_id")
+    private Address address;
 
-//    default constructor
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    //    default constructor
     public Student() {
     }
 
@@ -23,7 +34,13 @@ public class Student {
         this.mobile = mobile;
     }
 
-//    Getter Setter
+    public Student( String name, int mobile,Address address) {
+
+        this.mobile = mobile;
+        this.name = name;
+        this.address = address;
+    }
+    //    Getter Setter
 
     public int getId() {
         return id;
