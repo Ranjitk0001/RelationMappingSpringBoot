@@ -19,7 +19,9 @@ public class OneToOneApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		appService.saveData();
+//		appService.saveData();
+		appService.fetchStudentRecord();
+
 	}
 	public static void main(String[] args) {
 		SpringApplication.run(OneToOneApplication.class, args);

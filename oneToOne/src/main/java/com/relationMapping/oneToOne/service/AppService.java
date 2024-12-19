@@ -39,5 +39,23 @@ public class AppService {
         System.out.println("Data for student and address table now are inserted...");
     }
 
+    @Transactional
+    public  void fetchStudentRecord(){
+
+        Student studentData=studentRepository.findById(6).get();
+
+        System.out.println(studentData);
+
+        Address addressData=studentData.getAddress();
+        System.out.println(addressData);
+        System.out.println("Address Id :- "+addressData.getAddressId());
+
+
+//                Student{id=6, name='rk', mobile=908234567}
+//        Address{addressId=6, houseDetails='Shiv5', city='pune', state='maha'}
+//        Address Id :- 6
+    }
+
+
 
 }
